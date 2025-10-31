@@ -11,48 +11,57 @@ public class ClientRegistrationPage {
 
     private final WebDriver driver;
 
+    private final By firstNameField = By.xpath(".//input[@placeholder='* Имя']");
+    private final By lastNameField = By.xpath(".//input[@placeholder='* Фамилия']");
+    private final By addressField = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
+    private final By metroStationField = By.xpath(".//input[@placeholder='* Станция метро']");
+    private final By telephoneField = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
+    private final By nextButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
+    private final By metroDropdown = By.xpath(".//div[@class='select-search__select']");
+
     public ClientRegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    private final By FirstNameField = By.xpath(".//input[@placeholder='* Имя']");
-    private final By LastNameField = By.xpath(".//input[@placeholder='* Фамилия']");
-    private final By AddressField = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
-    private final By MetroStationField = By.xpath(".//input[@placeholder='* Станция метро']");
-    private final By TelephoneField = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
-    private final By NextButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
-    private final By MetroDropdown = By.xpath(".//div[@class='select-search__select']");
-
-    public void EnterFirstNameIn(String firstName) {
-        driver.findElement(FirstNameField).clear();
-        driver.findElement(FirstNameField).sendKeys(firstName);
+    public void fillClientInfo(String firstName, String lastName, String address, String metroStation, String telephone) {
+        enterFirstName(firstName);
+        enterLastName(lastName);
+        enterAddress(address);
+        selectMetroStation(metroStation);
+        enterTelephone(telephone);
     }
 
-    public void EnterLastNameIn(String lastName) {
-        driver.findElement(LastNameField).clear();
-        driver.findElement(LastNameField).sendKeys(lastName);
+    public void enterFirstName(String firstName) {
+        driver.findElement(firstNameField).clear();
+        driver.findElement(firstNameField).sendKeys(firstName);
     }
 
-    public void EnterOrderAddressIn(String address) {
-        driver.findElement(AddressField).clear();
-        driver.findElement(AddressField).sendKeys(address);
+    public void enterLastName(String lastName) {
+        driver.findElement(lastNameField).clear();
+        driver.findElement(lastNameField).sendKeys(lastName);
     }
 
-    public void ChoiceMetroStation(By metroStationName) {
-        driver.findElement(MetroStationField).click();
+    public void enterAddress(String address) {
+        driver.findElement(addressField).clear();
+        driver.findElement(addressField).sendKeys(address);
+    }
+
+    public void selectMetroStation(String metroStationName) {
+        driver.findElement(metroStationField).click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(MetroDropdown));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(metroDropdown));
 
-        driver.findElement(metroStationName).click();
+        By stationLocator = By.xpath(".//div[text()='" + metroStationName + "']");
+        driver.findElement(stationLocator).click();
     }
 
-    public void EnterTelephoneIn(String telephone) {
-        driver.findElement(TelephoneField).clear();
-        driver.findElement(TelephoneField).sendKeys(telephone);
+    public void enterTelephone(String telephone) {
+        driver.findElement(telephoneField).clear();
+        driver.findElement(telephoneField).sendKeys(telephone);
     }
 
     public void clickOnNextButton() {
-        driver.findElement(NextButton).click();
+        driver.findElement(nextButton).click();
     }
 }

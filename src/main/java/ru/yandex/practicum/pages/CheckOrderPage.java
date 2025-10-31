@@ -3,24 +3,28 @@ package ru.yandex.practicum.pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CheckOrderPage {
 
     private final WebDriver driver;
 
-    public CheckOrderPage(WebDriver driver) {
+    private final By orderStatusButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Посмотреть статус']");
 
+
+    public CheckOrderPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    private final By TextOrderCreation = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Посмотреть статус']");
+    public void checkOrderIsCreated() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-    public void checkOrderCreation() {
+        WebElement statusButton = wait.until(ExpectedConditions.visibilityOfElementLocated(orderStatusButton));
+        Assert.assertTrue("Кнопка 'Посмотреть статус' не отображается", statusButton.isDisplayed());
 
-        Assert.assertTrue(driver.findElement(TextOrderCreation).isDisplayed());
-    }
-
-    public void endTest(){
-        driver.quit();
     }
 }

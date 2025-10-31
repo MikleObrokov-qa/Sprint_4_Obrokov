@@ -1,4 +1,4 @@
-package Test;
+package ru.yandex.practicum.tests;
 
 import org.junit.rules.ExternalResource;
 import org.openqa.selenium.WebDriver;
@@ -40,8 +40,4 @@ public class DriverFactory extends ExternalResource {
         initDriver();
     }
 
-
-    protected void after() {
-        driver.quit();
-    }
 }
