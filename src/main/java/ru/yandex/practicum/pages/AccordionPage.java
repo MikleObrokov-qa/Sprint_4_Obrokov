@@ -18,32 +18,32 @@ public class AccordionPage {
 
     private final By cookieButton = By.xpath(".//button[text()='да все привыкли']");
     private final By accordionLocator = By.xpath(".//div[@class='accordion']");
-    private final By accordionButton0 = By.xpath(".//div[@id='accordion__heading-0' and @class='accordion__button']");
-    private final By accordionButton1 = By.xpath(".//div[@id='accordion__heading-1' and @class='accordion__button']");
-    private final By accordionButton2 = By.xpath(".//div[@id='accordion__heading-2' and @class='accordion__button']");
-    private final By accordionButton3 = By.xpath(".//div[@id='accordion__heading-3' and @class='accordion__button']");
-    private final By accordionButton4 = By.xpath(".//div[@id='accordion__heading-4' and @class='accordion__button']");
-    private final By accordionButton5 = By.xpath(".//div[@id='accordion__heading-5' and @class='accordion__button']");
-    private final By accordionButton6 = By.xpath(".//div[@id='accordion__heading-6' and @class='accordion__button']");
-    private final By accordionButton7 = By.xpath(".//div[@id='accordion__heading-7' and @class='accordion__button']");
-    private final By accordionPanel0 = By.xpath(".//div[@id='accordion__panel-0']//p");
-    private final By accordionPanel1 = By.xpath(".//div[@id='accordion__panel-1']//p");
-    private final By accordionPanel2 = By.xpath(".//div[@id='accordion__panel-2']//p");
-    private final By accordionPanel3 = By.xpath(".//div[@id='accordion__panel-3']//p");
-    private final By accordionPanel4 = By.xpath(".//div[@id='accordion__panel-4']//p");
-    private final By accordionPanel5 = By.xpath(".//div[@id='accordion__panel-5']//p");
-    private final By accordionPanel6 = By.xpath(".//div[@id='accordion__panel-6']//p");
-    private final By accordionPanel7 = By.xpath(".//div[@id='accordion__panel-7']//p");
+    private final By accordionButtonZeroKit = By.xpath(".//div[@id='accordion__heading-0' and @class='accordion__button']");
+    private final By accordionButtonFirstKit = By.xpath(".//div[@id='accordion__heading-1' and @class='accordion__button']");
+    private final By accordionButtonSecondKit = By.xpath(".//div[@id='accordion__heading-2' and @class='accordion__button']");
+    private final By accordionButtonThirdKit = By.xpath(".//div[@id='accordion__heading-3' and @class='accordion__button']");
+    private final By accordionButtonFourthKit = By.xpath(".//div[@id='accordion__heading-4' and @class='accordion__button']");
+    private final By accordionButtonFifthKit = By.xpath(".//div[@id='accordion__heading-5' and @class='accordion__button']");
+    private final By accordionButtonSixthKit = By.xpath(".//div[@id='accordion__heading-6' and @class='accordion__button']");
+    private final By accordionButtonSeventhKit = By.xpath(".//div[@id='accordion__heading-7' and @class='accordion__button']");
+    private final By accordionPanelZeroKit = By.xpath(".//div[@id='accordion__panel-0']//p");
+    private final By accordionPanelFirstKit = By.xpath(".//div[@id='accordion__panel-1']//p");
+    private final By accordionPanelSecondKit = By.xpath(".//div[@id='accordion__panel-2']//p");
+    private final By accordionPanelThirdKit = By.xpath(".//div[@id='accordion__panel-3']//p");
+    private final By accordionPanelFourthKit = By.xpath(".//div[@id='accordion__panel-4']//p");
+    private final By accordionPanelFifthKit = By.xpath(".//div[@id='accordion__panel-5']//p");
+    private final By accordionPanelSixKit = By.xpath(".//div[@id='accordion__panel-6']//p");
+    private final By accordionPanelSeventhKit = By.xpath(".//div[@id='accordion__panel-7']//p");
 
 
     private final By[] accordionButtonLocators = {
-            accordionButton0, accordionButton1, accordionButton2, accordionButton3,
-            accordionButton4, accordionButton5, accordionButton6, accordionButton7
+            accordionButtonZeroKit, accordionButtonFirstKit, accordionButtonSecondKit, accordionButtonThirdKit,
+            accordionButtonFourthKit, accordionButtonFifthKit, accordionButtonSixthKit, accordionButtonSeventhKit
     };
 
     private final By[] accordionPanelLocators = {
-            accordionPanel0, accordionPanel1, accordionPanel2, accordionPanel3,
-            accordionPanel4, accordionPanel5, accordionPanel6, accordionPanel7
+            accordionPanelZeroKit, accordionPanelFirstKit, accordionPanelSecondKit, accordionPanelThirdKit,
+            accordionPanelFourthKit, accordionPanelFifthKit, accordionPanelSixKit, accordionPanelSeventhKit
     };
 
     public AccordionPage(WebDriver driver) {
